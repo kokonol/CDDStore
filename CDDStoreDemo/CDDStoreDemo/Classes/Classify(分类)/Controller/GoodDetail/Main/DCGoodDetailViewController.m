@@ -315,9 +315,9 @@
         shopCarVc.title = @"购物车";
         [self.navigationController pushViewController:shopCarVc animated:YES];
     }else  if (button.tag == 2) {
-        
+        NSLog(@"加入购物车");
     }else if (button.tag == 3){
-        
+        NSLog(@"立即购买");
     }
 }
 

@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>CDDMall</string>
+	<string>martkk</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -31,6 +31,10 @@
 	<string>访问相机以拍照</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>访问相册以选择和保存照片</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>PingFang Medium.ttf</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>
@@ -40,10 +44,6 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-	</array>
-	<key>UIAppFonts</key>
-	<array>
-		<string>PingFang Medium.ttf</string>
 	</array>
 </dict>
 </plist>

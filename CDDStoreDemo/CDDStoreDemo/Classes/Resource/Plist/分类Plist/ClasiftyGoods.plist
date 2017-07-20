@@ -5,6 +5,33 @@
 	<dict>
 		<key>images</key>
 		<array>
+			<string>http://img2.bitautoimg.com/autoalbum/files/20140902/163/10184116340634_3571489_16.jpg</string>
+			<string>http://img4.bitautoimg.com/autoalbum/files/20140902/206/10184120644730_3571491_16.jpg</string>
+			<string>http://img3.bitautoimg.com/autoalbum/files/20140902/194/10172519415971_3571438_16.jpg</string>
+			<string>http://img4.bitautoimg.com/autoalbum/files/20140902/155/10172515512862_3571435_16.jpg</string>
+		</array>
+		<key>goods_address</key>
+		<string>辽宁 大连</string>
+		<key>sale_count</key>
+		<string>2</string>
+		<key>expressage</key>
+		<string>0</string>
+		<key>goods_title</key>
+		<string>&quot; 5.7L 旗舰&quot;</string>
+		<key>image_url</key>
+		<string>http://img1.bitautoimg.com/autoalbum/files/20140902/230/10184323062862_3571492_16.jpg</string>
+		<key>price</key>
+		<real>9.99</real>
+		<key>sales</key>
+		<integer>1</integer>
+		<key>main_title</key>
+		<string>全新Jeep大切诺基,进口专业级豪华SUV</string>
+		<key>stock</key>
+		<integer>233</integer>
+	</dict>
+	<dict>
+		<key>images</key>
+		<array>
 			<string>http://gfs17.gomein.net.cn/T1CvZTBsbv1RCvBVdK_800.jpg</string>
 			<string>http://gfs12.gomein.net.cn/T1evhTBydv1RCvBVdK_800.jpg</string>
 			<string>http://gfs12.gomein.net.cn/T1oGxTBXA_1RCvBVdK_800.jpg</string>
