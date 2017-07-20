@@ -90,6 +90,7 @@ static NSString *const DCBrandSortCellID = @"DCBrandSortCell";
 
 
 #pragma mark - LifeCyle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     

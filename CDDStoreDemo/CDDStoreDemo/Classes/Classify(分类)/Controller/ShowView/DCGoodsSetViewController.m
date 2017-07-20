@@ -88,6 +88,14 @@ static NSString *const DCListGridCellID = @"DCListGridCell";
 }
 
 #pragma mark - LifeCyle
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBar.barTintColor = RGBA(231, 23, 37, 1.0);
+    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor whiteColor]};
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -235,6 +243,7 @@ static NSString *const DCListGridCellID = @"DCListGridCell";
     dcVc.goodPrice = _setItem[indexPath.row].price;
     dcVc.goodSubtitle = _setItem[indexPath.row].goods_title;
     dcVc.shufflingArray = _setItem[indexPath.row].images;
+    dcVc.goodImageView = _setItem[indexPath.row].image_url;
     
     [self.navigationController pushViewController:dcVc animated:YES];
     

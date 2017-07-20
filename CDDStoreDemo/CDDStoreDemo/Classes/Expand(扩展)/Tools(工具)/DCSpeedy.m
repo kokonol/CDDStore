@@ -46,7 +46,7 @@
     CGFloat textMaxW = maxW;
     CGSize textMaxSize = CGSizeMake(textMaxW, MAXFLOAT);
     
-    CGSize textSize = [text boundingRectWithSize:textMaxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont fontWithName:@"PingFangSC-Regular" size:textFont]} context:nil].size;
+    CGSize textSize = [text boundingRectWithSize:textMaxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont fontWithName:PFR size:textFont]} context:nil].size;
     
     return textSize;
 }

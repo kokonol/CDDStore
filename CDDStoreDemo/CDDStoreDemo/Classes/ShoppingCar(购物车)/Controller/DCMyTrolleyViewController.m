@@ -20,6 +20,7 @@
 #import "DCRecommendReusableView.h"
 // Vendors
 #import <MJExtension.h>
+#import "UINavigationController+FDFullscreenPopGesture.h"
 // Categories
 
 // Others
@@ -51,7 +52,6 @@ static NSString *const DCRecommendCellID = @"DCRecommendCell";
         _collectionView.showsHorizontalScrollIndicator = NO;
         _collectionView.delegate = self;
         _collectionView.dataSource = self;
-        _collectionView.frame = CGRectMake(0, ScreenH - collectionViewH - DCBottomTabH, ScreenW, collectionViewH);
         [self.view addSubview:_collectionView];
         
         //注册Cell
@@ -69,6 +69,15 @@ static NSString *const DCRecommendCellID = @"DCRecommendCell";
 }
 
 #pragma mark - LifeCyle
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    if (self.navigationController.navigationBar.barTintColor == RGBA(231, 23, 37, 1.0)) return;
+    self.navigationController.navigationBar.barTintColor = RGBA(231, 23, 37, 1.0);
+    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor whiteColor],NSFontAttributeName : [UIFont fontWithName:PFR size:20]};
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -87,6 +96,9 @@ static NSString *const DCRecommendCellID = @"DCRecommendCell";
     self.view.backgroundColor = DCBGColor;
     self.collectionView.backgroundColor = [UIColor whiteColor];
     self.automaticallyAdjustsScrollViewInsets = NO;
+    CGFloat colBottom = (self.isTabBar == NO) ? DCBottomTabH : 0;
+    self.collectionView.frame = CGRectMake(0, ScreenH - collectionViewH - colBottom, ScreenW, collectionViewH);
+    self.navigationController.fd_fullscreenPopGestureRecognizer.enabled = NO;
 }
 
 #pragma mark - 推荐商品数据

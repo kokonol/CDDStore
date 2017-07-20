@@ -74,26 +74,26 @@
 
 /// Get video 获得视频
 - (void)getVideoWithAsset:(id)asset completion:(void (^)(AVPlayerItem * playerItem, NSDictionary * info))completion;
-- (void)getVideoWithAsset:(id)asset progressHandler:(void (^)(double progress, NSError *error, BOOL *stop, NSDictionary *info))progressHandler completion:(void (^)(AVPlayerItem * _Nullable, NSDictionary * _Nullable))completion;
+- (void)getVideoWithAsset:(id)asset progressHandler:(void (^)(double progress, NSError *error, BOOL *stop, NSDictionary *info))progressHandler completion:(void (^_Nonnull)(AVPlayerItem * _Nullable, NSDictionary * _Nullable))completion;
 
 /// Export video 导出视频
-- (void)getVideoOutputPathWithAsset:(id)asset completion:(void (^)(NSString *outputPath))completion;
+- (void)getVideoOutputPathWithAsset:(id _Nonnull )asset completion:(void (^_Nonnull)(NSString * _Nonnull outputPath))completion;
 
 /// Get photo bytes 获得一组照片的大小
-- (void)getPhotosBytesWithArray:(NSArray *)photos completion:(void (^)(NSString *totalBytes))completion;
+- (void)getPhotosBytesWithArray:(NSArray *_Nonnull)photos completion:(void (^_Nonnull)(NSString * _Nonnull totalBytes))completion;
 
 /// Judge is a assets array contain the asset 判断一个assets数组是否包含这个asset
-- (BOOL)isAssetsArray:(NSArray *)assets containAsset:(id)asset;
+- (BOOL)isAssetsArray:(NSArray *_Nonnull)assets containAsset:(id _Nonnull )asset;
 
-- (NSString *)getAssetIdentifier:(id)asset;
-- (BOOL)isCameraRollAlbum:(NSString *)albumName;
+- (NSString *_Nonnull)getAssetIdentifier:(id _Nonnull )asset;
+- (BOOL)isCameraRollAlbum:(NSString *_Nonnull)albumName;
 
 /// 检查照片大小是否满足最小要求
-- (BOOL)isPhotoSelectableWithAsset:(id)asset;
-- (CGSize)photoSizeWithAsset:(id)asset;
+- (BOOL)isPhotoSelectableWithAsset:(id _Nonnull )asset;
+- (CGSize)photoSizeWithAsset:(id _Nonnull )asset;
 
 /// 修正图片转向
-- (UIImage *)fixOrientation:(UIImage *)aImage;
+- (UIImage *_Nonnull)fixOrientation:(UIImage *_Nonnull)aImage;
 
 @end
 
