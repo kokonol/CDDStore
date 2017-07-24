@@ -15,7 +15,7 @@
 // Views
 
 // Vendors
-#import "UINavigationController+FDFullscreenPopGesture.h"
+#import "GQGesVCTransition.h"
 // Categories
 #import "UIBarButtonItem+DCBarButtonItem.h"
 // Others
@@ -37,23 +37,22 @@
 #pragma mark - LifeCyle
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.fd_fullscreenPopGestureRecognizer.enabled = YES;
-    
+    [GQGesVCTransition validateGesBackWithType:GQGesVCTransitionTypePanWithPercentRight withRequestFailToLoopScrollView:YES]; //手势返回
 }
 
 #pragma mark - <初始化>
 + (void)setUpBase
 {
     UINavigationBar *bar = [UINavigationBar appearance];
-    bar.barTintColor = RGBA(231, 23, 37, 1.0);
+    bar.barTintColor = DCBGColor;
     [bar setShadowImage:[UIImage new]];
-    [bar setTintColor:[UIColor whiteColor]];
+    [bar setTintColor:[UIColor clearColor]];
     
     NSMutableDictionary *attributes = [NSMutableDictionary dictionary];
     // 设置导航栏字体颜色
-    UIColor * naiColor = [UIColor whiteColor];
+    UIColor * naiColor = [UIColor blackColor];
     attributes[NSForegroundColorAttributeName] = naiColor;
-    attributes[NSFontAttributeName] = PFR20Font;
+    attributes[NSFontAttributeName] = PFR18Font;
     bar.titleTextAttributes = attributes;
 }
 
@@ -62,8 +61,7 @@
     
     if (self.childViewControllers.count >= 1) {
         //返回按钮自定义
-        viewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"back"] style:UIBarButtonItemStyleDone target:self action:@selector(backClick)];
-
+        viewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"navigationbar_back"] style:UIBarButtonItemStyleDone target:self action:@selector(backClick)];
         //影藏BottomBar
         viewController.hidesBottomBarWhenPushed = YES;
     }
@@ -82,6 +80,17 @@
 //{
 //    return UIStatusBarStyleLightContent;
 //}
+
+
+
+/**
+ 如果单单只是想控制所有界面上方的BarStyle可以打开上面的代码打开这行代码并且在那个界面重写上面的代码
+
+ @return UIViewController
+ */
+- (UIViewController *)childViewControllerForStatusBarStyle{
+    return self.topViewController;
+}
 
 
 @end

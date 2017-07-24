@@ -96,7 +96,7 @@ static NSString *DCFootprintCellID = @"DCFootprintCell";
     myFootLabel.font = PFR15Font;
     
     [_footprintView addSubview:myFootLabel];
-    myFootLabel.frame  = CGRectMake(0, 20, FootprintScreenW, 35);
+    myFootLabel.frame  = CGRectMake(0, 20, FootprintScreenW, 44);
     
     _tableView.frame = CGRectMake(0, myFootLabel.dc_bottom, FootprintScreenW, ScreenH - myFootLabel.dc_bottom);
 }

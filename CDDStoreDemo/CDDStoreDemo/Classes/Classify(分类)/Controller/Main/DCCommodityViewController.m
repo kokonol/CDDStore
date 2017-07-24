@@ -90,6 +90,12 @@ static NSString *const DCBrandSortCellID = @"DCBrandSortCell";
 
 
 #pragma mark - LifeCyle
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    if (self.navigationController.navigationBar.barTintColor == RGBA(231, 23, 37, 1.0))return;
+    self.navigationController.navigationBar.barTintColor = RGBA(231, 23, 37, 1.0);
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -234,6 +240,12 @@ static NSString *const DCBrandSortCellID = @"DCBrandSortCell";
     DCGoodsSetViewController *goodSetVc = [[DCGoodsSetViewController alloc] init];
     goodSetVc.goodPlisName = @"ClasiftyGoods.plist";
     [self.navigationController pushViewController:goodSetVc animated:YES];
+}
+
+#pragma 设置StatusBar为白色
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
 }
 
 @end

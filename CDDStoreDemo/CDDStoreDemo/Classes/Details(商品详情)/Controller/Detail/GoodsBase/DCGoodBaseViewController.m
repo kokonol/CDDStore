@@ -258,9 +258,9 @@ static NSArray *lastSeleArray_;
             cell.goodPriceLabel.text = [NSString stringWithFormat:@"¥ %@",_goodPrice];
             cell.goodSubtitleLabel.text = _goodSubtitle;
             [DCSpeedy dc_setUpLabel:cell.goodTitleLabel Content:_goodTitle IndentationFortheFirstLineWith:cell.goodPriceLabel.font.pointSize * 2];
+            __weak typeof(self)weakSelf = self;
             cell.shareButtonClickBlock = ^{
-                
-                [self setUpAlterViewControllerWith:[DCShareToViewController new] WithDistance:300 WithDirection:XWDrawerAnimatorDirectionBottom WithParallaxEnable:NO WithFlipEnable:NO];
+                [weakSelf setUpAlterViewControllerWith:[DCShareToViewController new] WithDistance:300 WithDirection:XWDrawerAnimatorDirectionBottom WithParallaxEnable:NO WithFlipEnable:NO];
             };
             gridcell = cell;
         }else if (indexPath.row == 1){

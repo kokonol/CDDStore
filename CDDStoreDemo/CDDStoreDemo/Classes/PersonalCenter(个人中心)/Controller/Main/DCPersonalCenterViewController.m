@@ -88,7 +88,13 @@ static NSString *const DCYouLikeHeadViewID = @"DCYouLikeHeadView";
 {
     [super viewWillAppear:animated];
     [self.collectionView reloadData];
-    self.navigationController.navigationBarHidden = YES; //隐藏导航条
+    [self.navigationController setNavigationBarHidden:YES];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [self.navigationController setNavigationBarHidden:NO];
 }
 
 - (void)viewDidLoad {
@@ -333,10 +339,11 @@ static NSString *const DCYouLikeHeadViewID = @"DCYouLikeHeadView";
     [self.navigationController pushViewController:messageVc animated:YES];
 }
 
-- (void)viewWillDisappear:(BOOL)animated
+#pragma 设置StatusBar为白色
+- (UIStatusBarStyle)preferredStatusBarStyle
 {
-    [super viewWillDisappear:animated];
-    self.navigationController.navigationBarHidden = NO;
-    
+    return UIStatusBarStyleLightContent;
 }
+
+
 @end

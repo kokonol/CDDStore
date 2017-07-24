@@ -56,14 +56,6 @@
 }
 
 #pragma mark - LifeCyle
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    if (self.navigationController.navigationBar.barTintColor == DCBGColor)return;
-    self.navigationController.navigationBar.barTintColor = DCBGColor;
-    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor blackColor]};
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"navigationbar_back"] style:UIBarButtonItemStyleDone target:self action:@selector(backClick)];
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -90,6 +82,7 @@
     self.scrollerView.backgroundColor = self.view.backgroundColor;
     self.scrollerView.contentSize = CGSizeMake(self.view.dc_width * self.childViewControllers.count, 0);
     self.automaticallyAdjustsScrollViewInsets = NO;
+    
 }
 
 
@@ -343,11 +336,6 @@
     
     [self dismissViewControllerAnimated:YES completion:nil];
     
-}
-
-- (void)backClick
-{
-    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark - 消失

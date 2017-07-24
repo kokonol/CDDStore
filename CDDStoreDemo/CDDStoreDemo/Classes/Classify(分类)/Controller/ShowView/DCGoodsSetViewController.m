@@ -91,19 +91,18 @@ static NSString *const DCListGridCellID = @"DCListGridCell";
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    self.navigationController.navigationBar.barTintColor = RGBA(231, 23, 37, 1.0);
-    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor whiteColor]};
+    if (self.navigationController.navigationBar.barTintColor == DCBGColor)return;
+    self.navigationController.navigationBar.barTintColor = DCBGColor;
 }
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self setUpNav];
+    
     [self setUpColl];
     
     [self setUpData];
-    
-    [self setUpNav];
     
     [self setUpSuspendView];
 
@@ -127,20 +126,20 @@ static NSString *const DCListGridCellID = @"DCListGridCell";
 #pragma mark - 导航栏
 - (void)setUpNav
 {
-    _switchViewButton = [[UIButton alloc] initWithFrame:(CGRect){0, 10, 44, 44}];
+    _switchViewButton = [[UIButton alloc] initWithFrame:(CGRect){ScreenW - 50, 10, 44, 44}];
+    _switchViewButton.imageEdgeInsets = UIEdgeInsetsMake(0, DCMargin, 0, 0);
     [_switchViewButton setImage:[UIImage imageNamed:@"nav_btn_jiugongge"] forState:UIControlStateNormal];
     [_switchViewButton setImage:[UIImage imageNamed:@"nav_btn_list"] forState:UIControlStateSelected];
     [_switchViewButton addTarget:self action:@selector(switchViewButtonBarItemBtnClick:) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:_switchViewButton];
-    
+
     DCNavSearchBarView *searchBarVc = [[DCNavSearchBarView alloc] init];
     searchBarVc.placeholdLabel.text = @"快速查找商品";
-    searchBarVc.frame = CGRectMake(40, 25, ScreenW - 100, 35);
+    searchBarVc.frame = CGRectMake(40, 25, ScreenW - 120, 35);
     searchBarVc.voiceImageBtn.hidden = YES;
     searchBarVc.searchViewBlock = ^{
         NSLog(@"搜索");
     };
-    
     self.navigationItem.titleView = searchBarVc;
 }
 

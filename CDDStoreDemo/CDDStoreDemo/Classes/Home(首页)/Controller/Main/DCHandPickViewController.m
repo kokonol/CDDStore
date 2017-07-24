@@ -100,6 +100,13 @@ static NSString *const DCScrollAdFootViewID = @"DCScrollAdFootView";
 }
 
 #pragma mark - LifeCyle
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    if (self.navigationController.navigationBar.barTintColor == RGBA(231, 23, 37, 1.0))return;
+    self.navigationController.navigationBar.barTintColor = RGBA(231, 23, 37, 1.0);
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -388,6 +395,12 @@ static NSString *const DCScrollAdFootViewID = @"DCScrollAdFootView";
     DCMessageViewController *messageVc = [[DCMessageViewController alloc] init];
     messageVc.title = @"消息中心";
     [self.navigationController pushViewController:messageVc animated:YES];
+}
+
+#pragma 设置StatusBar为白色
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
 }
 
 @end

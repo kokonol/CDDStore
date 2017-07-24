@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		187E678B1E7D793100722607 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 187E678A1E7D793100722607 /* main.m */; };
 		187E67991E7D793100722607 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 187E67971E7D793100722607 /* LaunchScreen.storyboard */; };
+		18B859AB1F21A08A008852A7 /* GQGesVCTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B859AA1F21A08A008852A7 /* GQGesVCTransition.m */; };
 		18DCA3091F1F4187008BF67E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DCA13E1F1F4186008BF67E /* AppDelegate.m */; };
 		18DCA30A1F1F4187008BF67E /* DCCommodityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DCA1431F1F4186008BF67E /* DCCommodityViewController.m */; };
 		18DCA30B1F1F4187008BF67E /* DCFiltrateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DCA1461F1F4186008BF67E /* DCFiltrateViewController.m */; };
@@ -232,6 +233,8 @@
 		187E679A1E7D793100722607 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		187E679F1E7D793100722607 /* CDDStoreDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CDDStoreDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		187E67AA1E7D793100722607 /* CDDStoreDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CDDStoreDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		18B859A91F21A08A008852A7 /* GQGesVCTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GQGesVCTransition.h; sourceTree = "<group>"; };
+		18B859AA1F21A08A008852A7 /* GQGesVCTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GQGesVCTransition.m; sourceTree = "<group>"; };
 		18DCA13D1F1F4186008BF67E /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		18DCA13E1F1F4186008BF67E /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		18DCA1421F1F4186008BF67E /* DCCommodityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCCommodityViewController.h; sourceTree = "<group>"; };
@@ -670,6 +673,15 @@
 				187E678A1E7D793100722607 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		18B859A51F218DF7008852A7 /* GQGesVCTransition */ = {
+			isa = PBXGroup;
+			children = (
+				18B859A91F21A08A008852A7 /* GQGesVCTransition.h */,
+				18B859AA1F21A08A008852A7 /* GQGesVCTransition.m */,
+			);
+			path = GQGesVCTransition;
 			sourceTree = "<group>";
 		};
 		18DCA13A1F1F4186008BF67E /* Classes */ = {
@@ -1213,6 +1225,7 @@
 		18DCA1F91F1F4186008BF67E /* Vendors(第三方) */ = {
 			isa = PBXGroup;
 			children = (
+				18B859A51F218DF7008852A7 /* GQGesVCTransition */,
 				18DCA1FA1F1F4186008BF67E /* AddressManager */,
 				18DCA1FE1F1F4186008BF67E /* AlertViewManager */,
 				18DCA2041F1F4186008BF67E /* DBModel */,
@@ -1658,10 +1671,10 @@
 		18DCA2C21F1F4187008BF67E /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				18DCA2C31F1F4187008BF67E /* DCMessageViewController.h */,
-				18DCA2C41F1F4187008BF67E /* DCMessageViewController.m */,
 				18DCA2C51F1F4187008BF67E /* DCPersonalCenterViewController.h */,
 				18DCA2C61F1F4187008BF67E /* DCPersonalCenterViewController.m */,
+				18DCA2C31F1F4187008BF67E /* DCMessageViewController.h */,
+				18DCA2C41F1F4187008BF67E /* DCMessageViewController.m */,
 				18DCA2C71F1F4187008BF67E /* DCSettingViewController.h */,
 				18DCA2C81F1F4187008BF67E /* DCSettingViewController.m */,
 			);
@@ -2187,6 +2200,7 @@
 				18DCA37B1F1F4187008BF67E /* XWCoolAnimator+XWPortal.m in Sources */,
 				18DCA37F1F1F4187008BF67E /* XWFilterAnimator+XWBarSwipe.m in Sources */,
 				18DCA38C1F1F4187008BF67E /* DCGridItem.m in Sources */,
+				18B859AB1F21A08A008852A7 /* GQGesVCTransition.m in Sources */,
 				18DCA3A21F1F4187008BF67E /* DCMySelfMessageViewController.m in Sources */,
 				18DCA31D1F1F4187008BF67E /* DCFootprintCell.m in Sources */,
 				18DCA3201F1F4187008BF67E /* DCGoodBaseViewController.m in Sources */,
