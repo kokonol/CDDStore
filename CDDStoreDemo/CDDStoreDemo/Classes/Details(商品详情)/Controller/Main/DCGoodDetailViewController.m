@@ -309,19 +309,13 @@
         shopCarVc.isTabBar = YES;
         shopCarVc.title = @"购物车";
         [self.navigationController pushViewController:shopCarVc animated:YES];
-<<<<<<< HEAD:CDDStoreDemo/CDDStoreDemo/Classes/Classify(分类)/Controller/GoodDetail/Main/DCGoodDetailViewController.m
-    }else  if (button.tag == 2) {
-        NSLog(@"加入购物车");
-    }else if (button.tag == 3){
-        NSLog(@"立即购买");
-=======
+        
     }else  if (button.tag == 2 || button.tag == 3) { //父控制器的加入购物车和立即购买
         //异步发通知
         dispatch_sync(dispatch_get_global_queue(0, 0), ^{
             NSDictionary *dict = [[NSDictionary alloc] initWithObjectsAndKeys:[NSString stringWithFormat:@"%zd",button.tag],@"buttonTag", nil];
             [[NSNotificationCenter defaultCenter]postNotificationName:@"ClikAddOrBuy" object:nil userInfo:dict];
         });
->>>>>>> RocketsChen/master:CDDStoreDemo/CDDStoreDemo/Classes/Details(商品详情)/Controller/Main/DCGoodDetailViewController.m
     }
 }
 

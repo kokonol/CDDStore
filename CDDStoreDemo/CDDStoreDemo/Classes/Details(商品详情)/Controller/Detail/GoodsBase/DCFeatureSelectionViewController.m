@@ -180,8 +180,9 @@ static NSString *const DCFeatureChoseTopCellID = @"DCFeatureChoseTopCell";
         [SVProgressHUD dismissWithDelay:1.0];
         return;
     }
-    
     [self dismissFeatureViewControllerWithTag:button.tag];
+    NSLog(@"哈哈哈哈:%zd", button.tag);
+    
     
 }
 
