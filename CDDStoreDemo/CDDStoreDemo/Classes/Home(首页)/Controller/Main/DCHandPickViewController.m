@@ -152,13 +152,19 @@ static NSString *const DCScrollAdFootViewID = @"DCScrollAdFootView";
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem ItemWithImage:[UIImage imageNamed:@"message"] WithHighlighted:[UIImage imageNamed:@"message"] Target:self action:@selector(messageItemClick)];
 
     DCNavSearchBarView *searchBarVc = [[DCNavSearchBarView alloc] init];
-    searchBarVc.placeholdLabel.text = @"618 100元红包等你来抢";
+    
+//    [searchBarVc setDefaultSearchKeyWord];
+    //searchBarVc.searchTextField.text = @"618 100元红包等你来抢";
     searchBarVc.frame = CGRectMake(60, 25, ScreenW - 120, 35);
     searchBarVc.voiceButtonClickBlock = ^{
         NSLog(@"语音点击回调");
     };
     searchBarVc.searchViewBlock = ^{
-        NSLog(@"搜索");
+        
+        NSLog(@"首页商品搜索1234");
+        DCGoodsSetViewController *goodSetVc = [[DCGoodsSetViewController alloc] init];
+        goodSetVc.goodPlisName = @"ClasiftyGoods.plist";
+        [self.navigationController pushViewController:goodSetVc animated:YES];
     };
     
     self.navigationItem.titleView = searchBarVc;

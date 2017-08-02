@@ -134,11 +134,12 @@ static NSString *const DCListGridCellID = @"DCListGridCell";
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:_switchViewButton];
 
     DCNavSearchBarView *searchBarVc = [[DCNavSearchBarView alloc] init];
-    searchBarVc.placeholdLabel.text = @"快速查找商品";
+    //searchBarVc.searchTextField.text = @"快速查找商品";
+//    [searchBarVc setDefaultSearchKeyWord];
     searchBarVc.frame = CGRectMake(40, 25, ScreenW - 120, 35);
     searchBarVc.voiceImageBtn.hidden = YES;
     searchBarVc.searchViewBlock = ^{
-        NSLog(@"搜索");
+        NSLog(@"商品列表页面-搜索商品");
     };
     self.navigationItem.titleView = searchBarVc;
 }

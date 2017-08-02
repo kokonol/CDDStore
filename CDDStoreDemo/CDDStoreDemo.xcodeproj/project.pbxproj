@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D2384F61F3083BB00B69C19 /* ECPHotSearchWords.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2384F51F3083BB00B69C19 /* ECPHotSearchWords.m */; };
 		187E678B1E7D793100722607 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 187E678A1E7D793100722607 /* main.m */; };
 		187E67991E7D793100722607 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 187E67971E7D793100722607 /* LaunchScreen.storyboard */; };
 		18B859AB1F21A08A008852A7 /* GQGesVCTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B859AA1F21A08A008852A7 /* GQGesVCTransition.m */; };
@@ -227,6 +228,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D2384F41F30839C00B69C19 /* ECPHotSearchWords.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ECPHotSearchWords.h; sourceTree = "<group>"; };
+		0D2384F51F3083BB00B69C19 /* ECPHotSearchWords.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ECPHotSearchWords.m; sourceTree = "<group>"; };
 		187E67861E7D793000722607 /* CDDStoreDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CDDStoreDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		187E678A1E7D793100722607 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		187E67981E7D793100722607 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -1530,6 +1533,8 @@
 			children = (
 				18DCA2871F1F4186008BF67E /* DCGridItem.h */,
 				18DCA2881F1F4186008BF67E /* DCGridItem.m */,
+				0D2384F41F30839C00B69C19 /* ECPHotSearchWords.h */,
+				0D2384F51F3083BB00B69C19 /* ECPHotSearchWords.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2080,6 +2085,7 @@
 				18DCA33F1F1F4187008BF67E /* DCShareItemCell.m in Sources */,
 				18DCA3771F1F4187008BF67E /* XWCoolAnimator+XWFold.m in Sources */,
 				18DCA3931F1F4187008BF67E /* DCOverFootView.m in Sources */,
+				0D2384F61F3083BB00B69C19 /* ECPHotSearchWords.m in Sources */,
 				18DCA3461F1F4187008BF67E /* UIView+DCExtension.m in Sources */,
 				18DCA3311F1F4187008BF67E /* DCDetailServicetCell.m in Sources */,
 				18DCA3411F1F4187008BF67E /* DCCollectionHeaderLayout.m in Sources */,

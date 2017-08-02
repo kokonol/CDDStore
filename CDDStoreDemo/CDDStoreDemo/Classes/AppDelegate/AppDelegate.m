@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import "JKDBModel.h"
 #import "DCTabBarController.h"
+#import "ECPHotSearchWords.h"
+
 
 @interface AppDelegate ()
 
@@ -26,6 +28,8 @@
     [self.window makeKeyAndVisible];
     
     [self setUpUserData]; //设置数据
+    
+    [self setUpHotSearchWords];
     
     return YES;
 }
@@ -49,6 +53,24 @@
             [userInfo save];
         });
     }
+}
+
+- (void) setUpHotSearchWords
+{
+    NSString *hotJson = @"{\"hotWords\":[\"aaaaxxx\",\"bbbbxxx\",\"ccccxxx\"]}";
+    
+    NSArray *hotStringArray = [ECPHotSearchWords getHotWordsArray:hotJson];
+    NSMutableArray *array = [NSMutableArray array];
+    for(int i=0; i<hotStringArray.count; i++){
+        
+        ECPHotSearchWords *hot = [[ECPHotSearchWords alloc] init];
+        hot.hotWords = [hotStringArray objectAtIndex:i];
+        [array addObject:hot];
+    }
+    
+    [ECPHotSearchWords clearTable];
+    [ECPHotSearchWords saveObjects:array];
+    
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

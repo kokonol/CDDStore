@@ -49,6 +49,7 @@
 #define APPDELEGATE ((AppDelegate *)[UIApplication sharedApplication].delegate)
 
 #define UserInfoData [DCUserInfo findAll].lastObject
+#define ECPHotSearchWordsData [ECPHotSearchWords findAll]
 
 
 //数组
