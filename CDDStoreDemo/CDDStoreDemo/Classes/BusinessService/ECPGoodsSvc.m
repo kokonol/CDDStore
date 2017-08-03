@@ -14,7 +14,7 @@
 -(void)findGoodsList:(NSString *)condition showLoadingView: (UIView*) showLoadingView{
     NSLog(@"!!!GOODS SERVICE!!!");
     [super showLoadingIndicator:@"激恼加载中..." forView:showLoadingView];
-    [super sendToUrl:@"http://172.16.63.251:3000/goods": @"findGoodsList"];
+    [super sendToUrl:@"http://api-0.martkk.com/goods": @"findGoodsList"];
 }
 
 @end

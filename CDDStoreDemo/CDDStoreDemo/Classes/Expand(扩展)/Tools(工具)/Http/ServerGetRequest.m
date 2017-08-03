@@ -15,6 +15,7 @@
 
 - (void) sendToUrl:(NSString *)url:(NSString *)requestTypeFlag
 {
+    NSLog(@"_GET %@", url);
     NSURL *u = [NSURL URLWithString:url];
     self.request = [ASIHTTPRequest requestWithURL:u];
     super.requestTypeFlag = requestTypeFlag;
