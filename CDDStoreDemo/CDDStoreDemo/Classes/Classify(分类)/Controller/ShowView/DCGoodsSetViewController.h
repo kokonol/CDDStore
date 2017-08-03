@@ -12,6 +12,7 @@
 
 /* plist数据 */
 @property (strong , nonatomic)NSString *goodPlisName;
-
+/* 商品查询条件 */
+@property (strong , nonatomic)NSString *searchCondition;
 
 @end

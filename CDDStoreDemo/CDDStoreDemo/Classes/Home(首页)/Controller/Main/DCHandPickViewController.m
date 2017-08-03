@@ -159,11 +159,13 @@ static NSString *const DCScrollAdFootViewID = @"DCScrollAdFootView";
     searchBarVc.voiceButtonClickBlock = ^{
         NSLog(@"语音点击回调");
     };
+    __block DCNavSearchBarView *searchBarVcInBlock = searchBarVc;
     searchBarVc.searchViewBlock = ^{
-        
-        NSLog(@"首页商品搜索1234");
+        NSString *searchCondition = searchBarVcInBlock.searchTextField.text;
+        NSLog(@"首页商品搜索: %@", searchCondition);
         DCGoodsSetViewController *goodSetVc = [[DCGoodsSetViewController alloc] init];
-        goodSetVc.goodPlisName = @"ClasiftyGoods.plist";
+//        goodSetVc.goodPlisName = @"ClasiftyGoods.plist";
+        goodSetVc.searchCondition = searchCondition;
         [self.navigationController pushViewController:goodSetVc animated:YES];
     };
     

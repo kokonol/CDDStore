@@ -45,7 +45,8 @@
 - (void)setUpUI
 {
     _gridImageView = [[UIImageView alloc] init];
-    _gridImageView.contentMode = UIViewContentModeScaleAspectFill;
+//    _gridImageView.contentMode = UIViewContentModeScaleAspectFill;
+    _gridImageView.contentMode = UIViewContentModeScaleToFill;
     [self addSubview:_gridImageView];
     
     _gridLabel = [[UILabel alloc] init];

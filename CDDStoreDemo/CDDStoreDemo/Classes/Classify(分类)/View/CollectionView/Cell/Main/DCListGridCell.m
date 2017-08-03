@@ -65,7 +65,8 @@
     _autotrophyImageView.image = [UIImage imageNamed:@"detail_title_ziying_tag"];
     
     _gridImageView = [[UIImageView alloc] init];
-    _gridImageView.contentMode = UIViewContentModeScaleAspectFill;
+//    _gridImageView.contentMode = UIViewContentModeScaleAspectFill;
+    _gridImageView.contentMode = UIViewContentModeScaleToFill;
     [self addSubview:_gridImageView];
     
     _gridLabel = [[UILabel alloc] init];

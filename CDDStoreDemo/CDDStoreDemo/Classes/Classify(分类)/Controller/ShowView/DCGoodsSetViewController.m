@@ -29,8 +29,10 @@
 // Categories
 
 // Others
+#import "ECPGoodsSvc.h"
 
-@interface DCGoodsSetViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
+
+@interface DCGoodsSetViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout, ServerRequestDelegate>
 /* scrollerVew */
 @property (strong , nonatomic)UICollectionView *collectionView;
 
@@ -61,6 +63,8 @@ static NSString *const DCSwitchGridCellID = @"DCSwitchGridCell";
 static NSString *const DCListGridCellID = @"DCListGridCell";
 
 @implementation DCGoodsSetViewController
+
+ECPGoodsSvc *_svc;
 
 #pragma mark  - 防止警告
 - (NSString *)goodPlisName
@@ -96,6 +100,7 @@ static NSString *const DCListGridCellID = @"DCListGridCell";
 }
 
 - (void)viewDidLoad {
+//    _goodPlisName = @"ClasiftyGoods.plist";
     [super viewDidLoad];
     
     [self setUpNav];
@@ -105,7 +110,7 @@ static NSString *const DCListGridCellID = @"DCListGridCell";
     [self setUpData];
     
     [self setUpSuspendView];
-
+    
 }
 
 #pragma mark - initialize
@@ -121,8 +126,25 @@ static NSString *const DCListGridCellID = @"DCListGridCell";
 #pragma mark - 加载数据
 - (void)setUpData
 {
-    _setItem = [DCRecommendItem mj_objectArrayWithFilename:_goodPlisName];
+    _svc = [[ECPGoodsSvc alloc]init];
+    _svc.delegate = self;
+//    __weak typeof(self)weakSelf = self;
+//    svc.callback = ^{
+//        NSLog(@"商品列表 - 查询回调.");
+//        weakSelf.setItem = [DCRecommendItem mj_objectArrayWithFilename:@"ClasiftyGoods.plist"];
+//        [weakSelf.collectionView reloadData];
+//    };
+    NSLog(@"商品列表 - 商品查询：%@", _searchCondition);
+    [_svc findGoodsList:_searchCondition showLoadingView:_collectionView];
 }
+
+-(void)serverCallBack:(NSString *)requestTypeFlag :(BOOL)status :(NSString *)code :(NSString *)msg :(NSDictionary *)response{
+    NSLog(@"MSG:%@", msg);
+    _setItem = [DCRecommendItem mj_objectArrayWithFilename:@"ClasiftyGoods.plist"];
+    [_collectionView reloadData];
+}
+
+
 #pragma mark - 导航栏
 - (void)setUpNav
 {
