@@ -11,11 +11,10 @@
 
 @implementation ECPGoodsSvc
 
--(NSString *)findGoodsList:(NSString *)condition showLoadingView: (UIView*) showLoadingView{
+-(void)findGoodsList:(NSString *)condition showLoadingView: (UIView*) showLoadingView{
     NSLog(@"!!!GOODS SERVICE!!!");
-    [super showLoadingIndicatorForView:showLoadingView];
-    [super sendToUrl:@"https://r5x.ren5xing.com/test": @"findGoodsList"];
-    return @"ECPGoodsSvc.";
+    [super showLoadingIndicator:@"激恼加载中..." forView:showLoadingView];
+    [super sendToUrl:@"http://172.16.63.251:3000/goods": @"findGoodsList"];
 }
 
 @end

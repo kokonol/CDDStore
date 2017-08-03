@@ -126,24 +126,54 @@ ECPGoodsSvc *_svc;
 #pragma mark - 加载数据
 - (void)setUpData
 {
+    NSLog(@"商品列表 - 商品查询REQ：%@", _searchCondition);
     _svc = [[ECPGoodsSvc alloc]init];
     _svc.delegate = self;
-//    __weak typeof(self)weakSelf = self;
-//    svc.callback = ^{
-//        NSLog(@"商品列表 - 查询回调.");
-//        weakSelf.setItem = [DCRecommendItem mj_objectArrayWithFilename:@"ClasiftyGoods.plist"];
-//        [weakSelf.collectionView reloadData];
-//    };
-    NSLog(@"商品列表 - 商品查询：%@", _searchCondition);
     [_svc findGoodsList:_searchCondition showLoadingView:_collectionView];
 }
 
 -(void)serverCallBack:(NSString *)requestTypeFlag :(BOOL)status :(NSString *)code :(NSString *)msg :(NSDictionary *)response{
-    NSLog(@"MSG:%@", msg);
-    _setItem = [DCRecommendItem mj_objectArrayWithFilename:@"ClasiftyGoods.plist"];
+    NSLog(@"商品列表 - 商品查询MSG：%@", msg);
+//    _setItem = [DCRecommendItem mj_objectArrayWithFilename:@"ClasiftyGoods.plist"];
+    _setItem = [self getGoodsListFromResponse: response];
     [_collectionView reloadData];
 }
-
+-(NSMutableArray<DCRecommendItem *>*)getGoodsListFromResponse:(NSDictionary *)response{
+    NSMutableArray<DCRecommendItem *> *items = [[NSMutableArray alloc] init];
+    NSArray *goodsDictArray = [response objectForKey:@"results"];
+    for (int i=0; i<goodsDictArray.count; i++) {
+        NSDictionary *goodsDict = [goodsDictArray objectAtIndex:i];
+        DCRecommendItem *item = [[DCRecommendItem alloc]init];
+        
+        NSString *skuCd = [goodsDict objectForKey:@"skuCd"];
+        NSString *goodsCd = [goodsDict objectForKey:@"goodsCd"];
+        NSString *goodsName = [goodsDict objectForKey:@"goodsName"];
+        NSString *goodsPicture = [goodsDict objectForKey:@"goodsPicture"];
+        long goodsPrice = [[goodsDict objectForKey:@"goodsPrice"] longValue];
+        
+        //allSellFlag
+        //insufficientInventory
+        //polymerizationFlag
+        //polymerizationId
+        
+        // 图片URL
+        // https://r5x.ren5xing.com/s/gds/T1CvZTBsbv1RCvBVdK_360.jpg
+        item.image_url = [NSString stringWithFormat:@"https://r5x.ren5xing.com/s/gds/%@", goodsPicture];
+        // 商品标题
+        item.main_title = goodsName;
+        // 商品小标题
+        item.goods_title = @"BBBBB";
+        // 商品价格
+        item.price = [NSString stringWithFormat:@"%.2f", (float)goodsPrice/100];
+//        // 剩余
+//        item.stock = @"67";
+//        // 属性
+//        item.nature = @"";
+        
+        [items addObject:item];
+    }
+    return items;
+}
 
 #pragma mark - 导航栏
 - (void)setUpNav

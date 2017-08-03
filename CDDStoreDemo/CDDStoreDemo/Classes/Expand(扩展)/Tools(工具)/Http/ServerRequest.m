@@ -40,7 +40,7 @@
     NSString *successStr = [responseDict objectForKey:@"success"];
     NSString *code = [responseDict objectForKey:@"code"];
     NSString *msg = [responseDict objectForKey:@"msg"];
-    NSDictionary *response = [responseDict objectForKey:@"response"];
+    NSDictionary *response = [responseDict objectForKey:@"result"];
     BOOL success = [@"true" isEqualToString:successStr];
     
     if ([_delegate respondsToSelector:@selector(serverCallBack:::::)]) {
@@ -70,15 +70,15 @@
 {
     self.loadingIndicator = [[[MBProgressHUD alloc] initWithView:view] autorelease];
     self.loadingIndicator.removeFromSuperViewOnHide = YES;
-    self.loadingIndicator.labelText = message;
-    
+    self.loadingIndicator.label.text = message;
+    self.loadingIndicator.label.font = PFR10Font;
     [view addSubview:self.loadingIndicator];
-    [self.loadingIndicator show:YES];
+    [self.loadingIndicator showAnimated:YES];
 }
 
 - (void) hideLoadingBadge
 {
-    [self.loadingIndicator hide:YES];
+    [self.loadingIndicator hideAnimated:YES];
 }
 
 @end

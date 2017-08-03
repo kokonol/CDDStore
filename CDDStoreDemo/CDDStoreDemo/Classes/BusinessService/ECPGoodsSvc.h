@@ -9,6 +9,6 @@
 
 @interface ECPGoodsSvc : ServerGetRequest
 
--(NSString *)findGoodsList:(NSString *)condition showLoadingView: (UIView*) showLoadingView;
+-(void)findGoodsList:(NSString *)condition showLoadingView: (UIView*) showLoadingView;
 
 @end
